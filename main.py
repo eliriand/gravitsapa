@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import tkinter as tk
 from datetime import time
 from time import sleep
