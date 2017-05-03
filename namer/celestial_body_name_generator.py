@@ -944,9 +944,9 @@ def generate_comet_name():
     letter = random.choice(string.ascii_uppercase)
     return "{0}{1}/{2}".format(number, letter, name)
 
-
-#print("Star: {0}".format(generate_star_name()))
-#print("Planet: {0}".format(generate_planet_name_by_star(generate_star_name())))
-#print("Satellite: {0}".format(generate_satellite_name()))
-#print("Asteroid: {0}".format(generate_asteroid_name()))
-#print("Comet: {0}".format(generate_comet_name()))
+if __name__ == "__main__":
+    print("Star: {0}".format(generate_star_name()))
+    print("Planet: {0}".format(generate_planet_name_by_star(generate_star_name())))
+    print("Satellite: {0}".format(generate_satellite_name()))
+    print("Asteroid: {0}".format(generate_asteroid_name()))
+    print("Comet: {0}".format(generate_comet_name()))
