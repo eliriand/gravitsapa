@@ -1,8 +1,7 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import math
-
-G = 6.67408 * 10**(-11)
-DT = 0.1
-
+from config.globals import G, DT
 
 class Universe:
 
