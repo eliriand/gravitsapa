@@ -7,6 +7,12 @@ from time import sleep
 
 import config.globals as glob
 
+def zoom_in(event):
+    glob.ZOOM *= 1.5
+
+def zoom_out(event):
+    glob.ZOOM /= 1.5
+
 def main():
     root = tk.Tk()
     root.title("Gravitsapa")
@@ -20,6 +26,9 @@ def main():
     pause_button.grid(row=0, column=3)
     canvas = tk.Canvas(root, width = glob.CANVAS_SIZE, height = glob.CANVAS_SIZE, bg='black')
     canvas.grid(row=1, column=0, columnspan=4, sticky=tk.E+tk.W)
+
+    zoom_in_button.bind("<Button-1>", zoom_in)
+    zoom_out_button.bind("<Button-1>", zoom_out)
 
     universe = Universe([
         CelestialBody("Sun", "yellow", 5 * 10 ** 14, 0, 0, 0, 0),
