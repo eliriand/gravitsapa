@@ -13,6 +13,12 @@ def zoom_in(event):
 def zoom_out(event):
     glob.ZOOM /= 1.5
 
+def pause(event):
+    glob.RUNNING = False
+
+def resume(event):
+    glob.RUNNING = True
+
 def main():
     root = tk.Tk()
     root.title("Gravitsapa")
@@ -29,6 +35,8 @@ def main():
 
     zoom_in_button.bind("<Button-1>", zoom_in)
     zoom_out_button.bind("<Button-1>", zoom_out)
+    pause_button.bind("<Button-1>", pause)
+    resume_button.bind("<Button-1>", resume)
 
     universe = Universe([
         CelestialBody("Sun", "yellow", 5 * 10 ** 14, 0, 0, 0, 0),
@@ -39,7 +47,8 @@ def main():
     drawer = Drawer(canvas)
     while True:
         drawer.showObjects(universe.celestial_bodies)
-        universe.get_next_state()
+        if glob.RUNNING:
+            universe.get_next_state()
         sleep(glob.DT)
 
     root.mainloop()
