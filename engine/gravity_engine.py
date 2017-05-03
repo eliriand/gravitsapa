@@ -70,11 +70,11 @@ class CelestialBody:
     def __init__(self, name, color, mass, x, y, vx, vy):
         self.name = name
         self.color = color
-        self.mass = mass * 1.0
-        self.x = x * 1.0
-        self.y = y * 1.0
-        self.vx = vx * 1.0
-        self.vy = vy * 1.0
+        self.mass = float(mass)
+        self.x = float(x)
+        self.y = float(y)
+        self.vx = float(vx)
+        self.vy = float(vy)
 
 
 if __name__ == "__main__":
