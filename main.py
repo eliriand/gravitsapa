@@ -40,7 +40,10 @@ def main():
 
     universe = Universe([
         CelestialBody("Sun", "yellow", 1.9891 * 10**30, 0, 0, 0, 0),
-        CelestialBody("Mercury", "pink", 3.285 * 10**23, 57909100, 0, 0, 1.473 * 10**6)
+        CelestialBody("Mercury", "pink", 3.285 * 10**23, 57909100, 0, 0, 1.473 * 10**6),
+        CelestialBody("Venus", "brown", 4.87 * 10**24, 108200000, 0, 0, 9.703 * 10**5),
+        CelestialBody("Earth", "blue", 30, 50, 60, -15, 15),
+        #CelestialBody("Mars", "red", 40, 70, 70, 10, 5)
     ])
 
     drawer = Drawer(canvas)
@@ -48,7 +51,8 @@ def main():
         drawer.showObjects(universe.celestial_bodies)
         if glob.RUNNING:
             universe.get_next_state()
-        sleep(glob.DT/40)
+        #universe.debug()
+        sleep(glob.DT/80)
 
     root.mainloop()
 
