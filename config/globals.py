@@ -4,5 +4,4 @@ UNIVERSE_SIZE = 10000
 CANVAS_SIZE = 850
 G = 6.67408 * 10**(-11)
 DT = 0.1
-ZOOM = float(2**(-19))
 RUNNING = True

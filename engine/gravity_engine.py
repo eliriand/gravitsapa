@@ -9,15 +9,17 @@ class Universe:
         self.celestial_bodies = celestial_bodies
 
     def debug(self):
-        print("Current state:")
+        state = "Current state:\n"
         for celestial_body in self.celestial_bodies:
-            print("\t{0} is in ({1}, {2}), current velocity ({3}, {4});".format(
+            state = ("{0}\t{1} is in ({2}, {3}), current velocity ({4}, {5});\n".format(
+                state,
                 celestial_body.name,
                 "%0.2f" % celestial_body.x,
                 "%0.2f" % celestial_body.y,
                 "%0.2f" % celestial_body.vx,
                 "%0.2f" % celestial_body.vy)
             )
+        return state
 
     def get_current_state(self):
         return self.celestial_bodies
