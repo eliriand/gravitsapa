@@ -8,10 +8,10 @@ from time import sleep
 import config.globals as glob
 
 def zoom_in(event):
-    glob.ZOOM *= 1.5
+    glob.ZOOM *= 2
 
 def zoom_out(event):
-    glob.ZOOM /= 1.5
+    glob.ZOOM /= 2
 
 def pause(event):
     glob.RUNNING = False
@@ -39,9 +39,8 @@ def main():
     resume_button.bind("<Button-1>", resume)
 
     universe = Universe([
-        CelestialBody("Sun", "yellow", 5 * 10 ** 14, 0, 0, 0, 0),
-        CelestialBody("Earth", "blue", 30, 50, 60, -15, 15),
-        CelestialBody("Mars", "red", 40, 70, 70, 10, 5)
+        CelestialBody("Sun", "yellow", 1.9891 * 10**30, 0, 0, 0, 0),
+        CelestialBody("Mercury", "pink", 3.285 * 10**23, 57909100, 0, 0, 1.473 * 10**6)
     ])
 
     drawer = Drawer(canvas)
@@ -49,7 +48,7 @@ def main():
         drawer.showObjects(universe.celestial_bodies)
         if glob.RUNNING:
             universe.get_next_state()
-        sleep(glob.DT)
+        sleep(glob.DT/40)
 
     root.mainloop()
 
