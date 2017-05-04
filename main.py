@@ -8,10 +8,10 @@ from time import sleep
 import config.globals as glob
 
 def zoom_in(event):
-    glob.ZOOM *= 2
+    glob.ZOOM -= 1
 
 def zoom_out(event):
-    glob.ZOOM /= 2
+    glob.ZOOM += 1
 
 def pause(event):
     glob.RUNNING = False

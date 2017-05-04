@@ -12,7 +12,7 @@ class Drawer:
         self.canvas.delete("all")
         canvas_x_center = self.canvas.winfo_width() / 2
         canvas_y_center = self.canvas.winfo_height() / 2
-        zoom = glob.ZOOM
+        zoom = 2 ** (glob.ZOOM * -1 )
         for obj in celestial_objects:
             radius = math.log(obj.mass)
             self.canvas.create_oval(canvas_x_center + zoom * (obj.x - radius),
